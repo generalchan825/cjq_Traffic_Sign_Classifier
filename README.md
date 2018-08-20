@@ -1,5 +1,4 @@
 # cjq_Traffic_Sign_Classifier
-# **Traffic Sign Recognition** 
 
 ## Writeup
 
@@ -25,7 +24,7 @@ The goals / steps of this project are the following:
 [image3]: ./OutputResult/histogram_test.png "test data set histogram"
 [image4]: ./OutputResult/300_random_images.png "original images"
 [image5]: ./OutputResult/300_random_gray.png "gray scale images"
-[image6]: ./OutputResult/histogram_test.png "test data set histogram"
+[image6]: ./OutputResult/selected_images.png "traffic signs"
 [image7]: ./OutputResult/histogram_test.png "test data set histogram"
 [image8]: ./OutputResult/histogram_test.png "test data set histogram"
 
@@ -81,27 +80,28 @@ My final model consisted of the following layers:
 | Layer         		|     Description	        					| 
 |:---------------------:|:---------------------------------------------:| 
 | Input         		| 32x32x3 RGB image   							| 
-| Convolution 3x3     	| 1x1 stride, same padding, outputs 32x32x64 	|
-| RELU					|												|
-| Max pooling	      	| 2x2 stride,  outputs 16x16x64 				|
-| Convolution 3x3	    | etc.      									|
-| Fully connected		| etc.        									|
-| Softmax				| etc.        									|
-|						|												|
-|						|												|
+| Conv1     	| 32x32x1 Output: 32x32x1 MaxPoolOutput:16x16x1 	|
+| Conv2					|		16x16x1 Output: 16x16x2 MaxPoolOutput: 8x8x2										|
+| FC1	      	| 8x8x2 Output: 8x8x2 				|
+| FC2	    | 8x8x2 Output: 43     									|
+
  
 
 
 #### 3. Describe how you trained your model. The discussion can include the type of optimizer, the batch size, number of epochs and any hyperparameters such as learning rate.
 
-To train the model, I used an ....
+The learning rate is 0.00005
+The epochs is 100
+the batch size is 32
+
+I used AdamOptimizer. I started with a higher learning rate but the VA was going back and forth so I decided to lower it. To save time, the batch size was set to 32. The epochs was set to 100 since the VA didn't really actually improve the results which was a waste of energy. The test accuracy is 96.1% and the VA was around 96.6%.
+
 
 #### 4. Describe the approach taken for finding a solution and getting the validation set accuracy to be at least 0.93. Include in the discussion the results on the training, validation and test sets and where in the code these were calculated. Your approach may have been an iterative process, in which case, outline the steps you took to get to the final solution and why you chose those steps. Perhaps your solution involved an already well known implementation or architecture. In this case, discuss why you think the architecture is suitable for the current problem.
 
 My final model results were:
-* training set accuracy of ?
-* validation set accuracy of ? 
-* test set accuracy of ?
+* validation set accuracy of 96.6%
+* test set accuracy of 96.1%
 
 If an iterative approach was chosen:
 * What was the first architecture that was tried and why was it chosen?
@@ -120,13 +120,11 @@ If a well known architecture was chosen:
 
 #### 1. Choose five German traffic signs found on the web and provide them in the report. For each image, discuss what quality or qualities might be difficult to classify.
 
-Here are five German traffic signs that I found on the web:
+Here are ten German traffic signs that I found on the web:
 
-![alt text][image4] ![alt text][image5] ![alt text][image6] 
-![alt text][image7] ![alt text][image8]
+![image6]
 
-The first image might be difficult to classify because ...
-
+I cropped the image and test the model. Unforturenatly, the test accuracy reached 90%. I need to feed more data to strenghten this neural network. The 36-go-straight-right signal was not recognized. Since the time is urgent, I will work on this in the future.
 #### 2. Discuss the model's predictions on these new traffic signs and compare the results to predicting on the test set. At a minimum, discuss what the predictions were, the accuracy on these new predictions, and compare the accuracy to the accuracy on the test set (OPTIONAL: Discuss the results in more detail as described in the "Stand Out Suggestions" part of the rubric).
 
 Here are the results of the prediction:
