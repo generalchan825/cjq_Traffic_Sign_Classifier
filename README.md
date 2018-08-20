@@ -23,8 +23,8 @@ The goals / steps of this project are the following:
 [image1]: ./OutputResult/histogram_training.png "training data set histogram"
 [image2]: ./OutputResult/histogram_valid.png "validation data set histogram"
 [image3]: ./OutputResult/histogram_test.png "test data set histogram"
-[image4]: ./OutputResult/histogram_test.png "test data set histogram"
-[image5]: ./OutputResult/histogram_test.png "test data set histogram"
+[image4]: ./OutputResult/300_random_images.png "original images"
+[image5]: ./OutputResult/300_random_gray.png "gray scale images"
 [image6]: ./OutputResult/histogram_test.png "test data set histogram"
 [image7]: ./OutputResult/histogram_test.png "test data set histogram"
 [image8]: ./OutputResult/histogram_test.png "test data set histogram"
@@ -37,7 +37,7 @@ The goals / steps of this project are the following:
 
 #### 1. Provide a Writeup / README that includes all the rubric points and how you addressed each one. You can submit your writeup as markdown or pdf. You can use this template as a guide for writing the report. The submission includes the project code.
 
-You're reading it! and here is a link to my [project code](https://github.com/udacity/CarND-Traffic-Sign-Classifier-Project/blob/master/Traffic_Sign_Classifier.ipynb)
+You're reading it! and here is a link to my [project code](https://github.com/generalchan825/cjq_Traffic_Sign_Classifier.git)
 
 ### Data Set Summary & Exploration
 
@@ -57,29 +57,21 @@ signs data set:
 Here is an exploratory visualization of the data set. It is a bar chart showing how the data is grouped into bins.
 
 ![image1]
-
+![image2]
+![image3]
 
 ### Design and Test a Model Architecture
 
 #### 1. Describe how you preprocessed the image data. What techniques were chosen and why did you choose these techniques? Consider including images showing the output of each preprocessing technique. Pre-processing refers to techniques such as converting to grayscale, normalization, etc. (OPTIONAL: As described in the "Stand Out Suggestions" part of the rubric, if you generated additional data for training, describe why you decided to generate additional data, how you generated the data, and provide example images of the additional data. Then describe the characteristics of the augmented training set like number of images in the set, number of images for each class, etc.)
 
-As a first step, I decided to convert the images to grayscale because ...
+As a first step, I decided to convert the images to grayscale.
 
 Here is an example of a traffic sign image before and after grayscaling.
 
-![alt text][image2]
+![image4]
+![image5]
 
-As a last step, I normalized the image data because ...
-
-I decided to generate additional data because ... 
-
-To add more data to the the data set, I used the following techniques because ... 
-
-Here is an example of an original image and an augmented image:
-
-![alt text][image3]
-
-The difference between the original data set and the augmented data set is the following ... 
+As a last step, I didn't normalize the image data because this grayscale data set was sufficient enough to obtain the expected results.
 
 
 #### 2. Describe what your final model architecture looks like including model type, layers, layer sizes, connectivity, etc.) Consider including a diagram and/or table describing the final model.
